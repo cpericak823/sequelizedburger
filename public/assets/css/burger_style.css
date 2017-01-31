@@ -1,0 +1,14 @@
+body {
+  text-align: center;
+  background-image: url("/assets/img/mcdonalds.jpg");
+  background-size: cover;
+}
+
+.image {
+  margin: auto;
+}
+
+ul {
+  display: inline-block;
+  text-align: left;
+}

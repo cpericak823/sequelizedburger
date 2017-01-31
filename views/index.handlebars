@@ -1,0 +1,15 @@
+
+<ul class="burger_list">
+{{#each index}}
+<li>{{burger_name}} 
+<form action = "/{{this.id}}?_method=DELETE" method ="POST" id = "{{this.id}}" class="devour"><button type="submit" form="{{this.id}}" data-id= "{{this.id}}" class="devour-button btn btn-lg btn-primary">Devour It
+</button></form> </li>
+{{/each}}
+</ul>
+<form action="/" method="post" class="create-form">
+<div class="form-group">
+          <label for="burger_name" class="burger_name"></label>
+          <input type="text" id="burger_name" name="burger_name" class="form-control">
+     </div>
+	<button type="submit" class="create-button btn btn-lg btn-primary" id="submit">Submit</button>
+	</form>
