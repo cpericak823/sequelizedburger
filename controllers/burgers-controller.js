@@ -23,31 +23,31 @@ module.exports = function(app) {
     //A query which adds a new burger based on the userInput to the database
     app.post("/", function(req, res) {
         console.log(req.body);
-        db.burger_db.create(req.body).then(function(dbBurger_db) {
-            res.json(dbBurger_db);
+        db.Burgers.create(req.body).then(function(dbBurgers) {
+            res.render("index", { index: dbBurgers });
         });
 
     });
 
     //a query that updates the burger
     app.put("/", function(req, res) {
-        db.burger_db.findOne({
+        db.Burgers.findOne({
             where: {
                 id: req.params.id
             }
-        }).then(function(dbBurger_db) {
-            //write a function that updates the devour value to true
-            res.json(dbBurger_db);
+        }).then(function(dbBurgers) {
+            //write a function that updates the devour value to true on click of the devour button
+            res.json(dbBurgers);
         });
     });
 
-    //a query that deletes the burger
+    //a query that deletes the burger from the database
     app.delete("/:id", function(req, res) {
-        db.burger_db.destroy({
+        db.Burgers.destroy({
             where: {
                 id: req.params.id
             }
-        }).then(function(dbBurger_db) {
+        }).then(function(dbBurgers) {
             res.json(dbBurger_db);
         });
     });
