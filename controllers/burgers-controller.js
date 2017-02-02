@@ -15,8 +15,8 @@ module.exports = function(app) {
 
     //route to get the data and return an html page
     app.get("/", function(req, res) {
-        db.burger_db.findAll({}).then(function(dbBurger_db) {
-            res.json(dbBurger_db);
+        db.Burgers.findAll({}).then(function(dbBurgers) {
+            res.render("index", { index: dbBurgers });
         });
     });
 
