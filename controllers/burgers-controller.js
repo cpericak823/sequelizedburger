@@ -5,10 +5,10 @@ var express = require("express");
 var app = express();
 
 //require the burger.js file
-var db = require("../models/burger.js");
+var db = require("../models/index.js");
 
 //require the connection file
-var connection = require("../config/connect.js");
+var connection = require("../config/config.json");
 
 //export the routes to be accessed later
 module.exports = function(app) {

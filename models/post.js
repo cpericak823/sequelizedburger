@@ -12,7 +12,6 @@ module.exports = function(sequelize, DataTypes) {
             allowNull: false,
             defaultValue: false,
         }
-
     });
     return Burgers;
 };
