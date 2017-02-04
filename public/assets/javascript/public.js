@@ -9,7 +9,7 @@ $(function() {
         $.ajax({
             url: currentURL + "/" + userInput,
             data: { burger_name: userInput },
-            type: "DELETE",
+            type: "PUT",
             success: function(res) {
                 window.location.replace('/');
             }
