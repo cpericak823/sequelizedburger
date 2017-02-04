@@ -8,7 +8,16 @@ body {
   margin: auto;
 }
 
-ul {
-  display: inline-block;
-  text-align: left;
+li {
+  display: block;
+  text-align: center;
+  font-size: 50px;
+}
+
+.devoured-list {
+  font-style: italic;
+}
+
+button {
+  font-size: 25px;
 }

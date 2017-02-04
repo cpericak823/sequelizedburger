@@ -1,11 +1,26 @@
+{{!-- an unorangizaed list of all the burgers --}}
+<ul class="burger_list_devoured">
 
-<ul class="burger_list">
+{{!-- loop through the each burger--}}
 {{#each index}}
+
+{{!-- if the burger is devoured, only display the the burger name--}}
+{{#if devoured}}
+<li class="devoured-list">{{burger_name}}</li> 
+</ul>
+
+<ul class="burger_list_devoured">
+{{!-- otherwise display the burger name and the devour button --}}
+{{else}}
 <li>{{burger_name}} 
-<form action = "/{{this.id}}?_method=DELETE" method ="POST" id = "{{this.id}}" class="devour"><button type="submit" form="{{this.id}}" data-id= "{{this.id}}" class="devour-button btn btn-lg btn-primary">Devour It
-</button></form> </li>
+<form action = "/{{this.id}}" id = "{{this.id}}" class="devour"><button type="submit" form="{{this.id}}" data-id= "{{this.id}}" class="devour-button btn btn-lg btn-primary">Devour It
+</button></form> </li> 
+{{/if}}
+
 {{/each}}
 </ul>
+
+{{!-- create a form with a submit button--}}
 <form action="/" method="post" class="create-form">
 <div class="form-group">
           <label for="burger_name" class="burger_name"></label>
