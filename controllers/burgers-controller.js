@@ -48,7 +48,7 @@ module.exports = function(app) {
                 id: req.params.id
             }
         }).then(function(dbBurgers) {
-            res.json(dbBurger_db);
+            res.render("index", { index: dbBurgers });
         });
     });
 };

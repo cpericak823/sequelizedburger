@@ -7,9 +7,9 @@ $(function() {
         console.log(userInput);
         // post the newly added data
         $.ajax({
-            url: currentURL + "/",
+            url: currentURL + "/" + userInput,
             data: { burger_name: userInput },
-            type: "PUT",
+            type: "DELETE",
             success: function(res) {
                 window.location.replace('/');
             }
